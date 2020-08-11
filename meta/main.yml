@@ -1,0 +1,21 @@
+---
+dependencies: []
+#
+galaxy_info:
+  author: acandid
+  description: Install AWX on RedHat/CentOS 8.
+  company: "Almir Candido"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - 8
+#
+  galaxy_tags:
+    - ansible
+    - awx
+    - tower
+    - automation
+#
+allow_duplicates: true

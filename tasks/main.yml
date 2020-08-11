@@ -1,0 +1,39 @@
+---
+# tasks file for awx
+#
+- name: Import task install_packages.yml
+  import_tasks: install_packages.yml
+  tags: install_pacckages
+#
+- name: Import task configure_selinux.yml
+  import_tasks: configure_selinux.yml
+  tags: selinux
+#
+- name: Import task docker_repo.yml
+  import_tasks: docker_repo.yml
+  tags: docker_repo
+#
+- name: Import task install_docker.yml
+  import_tasks: install_docker.yml
+  tags: install_docker
+#
+- name: Import task install_docker_python_modules.yml
+  import_tasks: install_docker_python_modules.yml
+  tags: docker_python
+#
+- name: Import tasks clone_awx.yml
+  import_tasks: clone_awx.yml
+  tags: clone_awx
+#
+- name: Import task configure_awx_inventory.yml
+  import_tasks: configure_awx_inventory.yml
+  tags: config_inventory
+#
+- name: Import task configure_firewall.yml
+  import_tasks: configure_firewall.yml
+  tags: firewall
+#
+- name: Import task install_awx.yml
+  import_tasks: install_awx.yml
+  tags: install_awx
+...

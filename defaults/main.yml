@@ -1,0 +1,6 @@
+---
+# defaults file for awx
+#
+awx_admin_password: 123qwe
+#
+awx_configure_dns: 8.8.8.8,8.8.4.4

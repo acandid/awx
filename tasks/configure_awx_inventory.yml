@@ -1,0 +1,29 @@
+---
+- name: Create key for awx
+  shell: pwgen -N 1 -s 30
+  register: result
+#
+- name: Configure secret key line
+  lineinfile:
+    path: /root/awx/installer/inventory
+    regexp: '^secret_key='
+    line: "secret_key={{ result.stdout }}"
+#
+- name: Create admin password
+  lineinfile:
+    path: /root/awx/installer/inventory
+    regexp: '^admin_password='
+    line: "admin_password={{ awx_admin_password }}"
+#
+- name: Configure alternative DNS servers
+  lineinfile:
+    path: /root/awx/installer/inventory
+    regexp: '^awx_alternate_dns_servers='
+    line: 'awx_alternate_dns_servers="{{ awx_configure_dns }}"'
+#
+- name: Configure awx official
+  lineinfile:
+    path: /root/awx/installer/inventory
+    regexp: '^awx_official='
+    line: awx_official=true
+...   

@@ -1,0 +1,7 @@
+---
+- name: Clone AWX from git
+  git:
+    repo: "{{ awx_git_repo }}"
+    dest: /root/awx
+    clone: yes
+...

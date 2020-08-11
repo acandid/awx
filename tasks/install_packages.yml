@@ -1,0 +1,12 @@
+---
+- name: Install Epel Repository
+  dnf:
+    name: "{{ awx_epel_repository }}"
+    state: latest
+#
+- name: Install Required Packages
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ awx_packages_required }}"
+...     

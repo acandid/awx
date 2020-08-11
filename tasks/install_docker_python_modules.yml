@@ -1,0 +1,4 @@
+---
+- name: Install docker pyhton modules
+  shell: pip3 install -U docker docker-compose
+...

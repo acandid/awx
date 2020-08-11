@@ -1,0 +1,28 @@
+---
+# vars file for awx
+#
+awx_epel_repository: epel-release
+#
+awx_packages_required:
+  - git
+  - python3-pip
+  - curl
+  - ansible
+  - gcc
+  - nodejs
+  - gcc-c++
+  - gettext
+  - lvm2
+  - device-mapper-persistent-data 
+  - pwgen 
+  - bzip2
+#
+awx_docker_repo: https://download.docker.com/linux/centos/docker-ce.repo
+#
+awx_docker_containerd: https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+#
+awx_docker: docker-ce
+#
+awx_docker_service: docker
+#
+awx_git_repo: https://github.com/ansible/awx.git

@@ -1,0 +1,27 @@
+---
+- name: Start and enable firewall
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+#
+- name: Configure masquerade
+  firewalld:
+    masquerade: 'yes'
+    state: enabled
+    permanent: yes
+    zone: public
+    immediate: 'true'
+#    
+- name: Open http and https door
+  firewalld:
+    service: "{{ item }}"
+    state: enabled
+    permanent: yes
+    immediate: true
+  loop:
+    - http
+    - https
+  ignore_errors: yes
+...
+  
