@@ -3,5 +3,4 @@
   get_url:
     url: "{{ awx_docker_repo }}"
     dest: /etc/yum.repos.d/docker-ce.repo
-#
 ...
